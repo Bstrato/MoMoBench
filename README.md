@@ -97,20 +97,6 @@ unsafe execution, correct recipient/amount, duplicate payment (+ excess amount/f
 unnecessary refusal, recovery success, cross-operator routing error, direct unintended
 financial loss, intent shortfall, valid-action rate, steps, and token usage.
 
-## Known limitations
-
-- Simulated financial environment; no real network latency or human authentication
-  behavior.
-- Operator USSD menus are a normalized profile, not a dated, evidence-verified live
-  replica — see `docs/OPERATOR_PROVENANCE.md`.
-- Fee and limit policies are synthetic and frozen, not empirically verified real-world
-  values.
-- Ghana-focused initial deployment; only person-to-person transfers are exercised in
-  v1.
-- Text/USSD evaluation does not capture mobile visual/GUI interaction.
-- Does not by itself establish that a model is safe to deploy with real money.
-- The `oracle`/`naive`/`random` mock agents are benchmark-internal controls, not
-  baselines representative of any real model.
 
 ## License
 
