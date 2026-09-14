@@ -4,10 +4,6 @@ A stateful, consequence-aware benchmark for evaluating whether LLM agents can sa
 and reliably execute Mobile Money transactions across heterogeneous but interoperable
 providers, in a simulated Ghanaian Mobile Money ecosystem (MTN, Telecel, AT).
 
-> **Safety notice:** MoMo Bench is a simulated research benchmark. It must not be
-> connected to production payment systems or used to autonomously transact real funds.
-> All users, wallets, balances, phone numbers, and transactions are synthetic.
-
 ## Why
 
 Mobile Money is the dominant way hundreds of millions of people in Sub-Saharan Africa
