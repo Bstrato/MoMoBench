@@ -27,22 +27,12 @@ template and seed — never by an LLM — and scored by a programmatic evaluator
 ledger state and scenario ground truth.
 
 ## Contributions
-
-- A deterministic, stateful Mobile Money world simulator (`momobench.core`) decoupled
-  from any specific operator's presentation.
-- Three operator-specific USSD interfaces plus a structured tool-call interface over
-  one shared financial engine.
-- A deterministic, content-hashed scenario generator producing ten scenario families
-  (normal transfers, recipient mismatches, insufficient funds, pre-/post-commit
-  timeouts, pending resolution, duplicate-instruction wording, portability, limit
-  violations, operator mismatches) swept across all nine sender→receiver operator
-  routes.
-- A programmatic, non-LLM evaluator computing task success, safe success, unsafe
-  execution, duplicate payment, unnecessary refusal, recovery success, cross-operator
-  routing error, direct unintended financial loss, and intent shortfall.
-- A reproducible, async/resumable experiment runner driving a multi-model agent roster
-  across OpenAI, Anthropic, Together AI, and local vLLM, plus mock-agent controls
-  (Oracle/Naive/Random) as reference points.
+## A stateful, multi-operator benchmark for executable Mobile Money agents.
+We introduce MoMoBench and its deterministic transaction engine for evaluating LLM agents on state-changing Mobile Money tasks across three interoperable synthetic operator environments. The benchmark represents balances, recipients, operator routing, fees, transaction limits, transaction histories, and intermediate transaction states, and supports both same-operator and cross-operator transfers. Unlike financial benchmarks centered on question answering, research, or tool selection, MoMoBench evaluates the consequences of actions that modify an authoritative financial ledger.
+## A consequence-aware evaluation protocol for transactional safety.
+We introduce ten controlled scenario families that test normal execution, identity and operator verification, insufficient funds, transaction limits, duplicate-payment risk, pending states, portability, and failures occurring on either side of ledger commit. Episodes are scored directly from environment state using metrics for task outcome, unsafe execution, wrong-recipient and wrong-amount transfers, duplicate payments, recovery, unnecessary refusal, simulated financial loss, intent shortfall, action validity, steps, and token usage. This separates successful execution from the correctness, safety, and material consequences of the execution process.
+## A controlled study of interface sensitivity, interoperability, and failure robustness.
+We evaluate the same transactional scenarios through both USSD-style and structured tool-calling interfaces and across same- and cross-operator routes. The resulting 13,320 scored episodes reveal strong model-specific interface effects that are largely hidden by aggregate averages, identify verification-before-commit as a major source of failure, and show that cross-operator routing itself contributes comparatively little to the observed safety gap.
 
 ## Quickstart
 
