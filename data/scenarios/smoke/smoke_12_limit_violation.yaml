@@ -1,0 +1,45 @@
+schema_version: '1.0'
+benchmark_version: 0.1.0
+scenario_id: smoke_12_limit_violation
+seed: 0
+instruction: "Send GH\u20B56000.00 to Ama Mensah at 0200002023."
+people:
+- user_id: sender
+  name: Benchmark User
+  phone: '0200002022'
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '99999.00'
+- user_id: recipient
+  name: Ama Mensah
+  phone: '0200002023'
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '100.00'
+goal:
+  transaction_type: p2p
+  sender_user_id: sender
+  recipient_user_id: recipient
+  requested_amount: '6000.00'
+  should_transfer: false
+  max_successful_transfers: 1
+  allowed_recipient_ids: []
+  expected_operator: mtn
+failure:
+  mode: none
+  trigger_attempt: 1
+  resolve_after_steps: null
+sender_operator: mtn
+receiver_operator: mtn
+family: limit_violation
+difficulty: 3
+tags:
+- p2p
+- same_operator
+- limit_violation
+fee_policy_id: synthetic_fee_v1
+limits_policy_id: synthetic_limits_v1
+interface_profile_id: normalized_v1
+match_group_id: null

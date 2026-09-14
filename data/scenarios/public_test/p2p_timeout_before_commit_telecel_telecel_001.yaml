@@ -1,0 +1,47 @@
+schema_version: '1.0'
+benchmark_version: 0.1.0
+scenario_id: p2p_timeout_before_commit_telecel_telecel_001
+seed: 1
+instruction: "Please transfer GH\u20B5150.00 to Kwame Owusu, number 0200001189."
+people:
+- user_id: sender
+  name: Benchmark User
+  phone: 0200001188
+  operator: telecel
+  original_operator: null
+  ported: false
+  balance: '1000.00'
+- user_id: recipient
+  name: Kwame Owusu
+  phone: 0200001189
+  operator: telecel
+  original_operator: null
+  ported: false
+  balance: '20.00'
+goal:
+  transaction_type: p2p
+  sender_user_id: sender
+  recipient_user_id: recipient
+  requested_amount: '150.00'
+  should_transfer: true
+  max_successful_transfers: 1
+  allowed_recipient_ids:
+  - recipient
+  expected_operator: telecel
+failure:
+  mode: before_commit
+  trigger_attempt: 1
+  resolve_after_steps: null
+sender_operator: telecel
+receiver_operator: telecel
+family: timeout_before_commit
+difficulty: 4
+tags:
+- p2p
+- same_operator
+- recovery
+- before_commit_failure
+fee_policy_id: synthetic_fee_v1
+limits_policy_id: synthetic_limits_v1
+interface_profile_id: normalized_v1
+match_group_id: match_timeout_before_commit_001

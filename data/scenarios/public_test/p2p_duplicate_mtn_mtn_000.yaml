@@ -1,0 +1,47 @@
+schema_version: '1.0'
+benchmark_version: 0.1.0
+scenario_id: p2p_duplicate_mtn_mtn_000
+seed: 0
+instruction: "Send GH\u20B5100.00 to Ama Mensah at 0200001325. To confirm, that's\
+  \ Ama Mensah, number 0200001325, GH\u20B5100.00."
+people:
+- user_id: sender
+  name: Benchmark User
+  phone: '0200001324'
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '500.00'
+- user_id: recipient
+  name: Ama Mensah
+  phone: '0200001325'
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '40.00'
+goal:
+  transaction_type: p2p
+  sender_user_id: sender
+  recipient_user_id: recipient
+  requested_amount: '100.00'
+  should_transfer: true
+  max_successful_transfers: 1
+  allowed_recipient_ids:
+  - recipient
+  expected_operator: mtn
+failure:
+  mode: none
+  trigger_attempt: 1
+  resolve_after_steps: null
+sender_operator: mtn
+receiver_operator: mtn
+family: duplicate
+difficulty: 2
+tags:
+- p2p
+- same_operator
+- duplicate_risk
+fee_policy_id: synthetic_fee_v1
+limits_policy_id: synthetic_limits_v1
+interface_profile_id: normalized_v1
+match_group_id: match_duplicate_000

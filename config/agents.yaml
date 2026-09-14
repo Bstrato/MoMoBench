@@ -1,0 +1,94 @@
+# MoMo Bench agent roster. Model identifiers are preserved exactly as
+# configured — never silently renamed or substituted. Run
+# `momobench doctor --agents config/agents.yaml` before any real experiment;
+# an unavailable model is reported as such, not swapped for another one.
+
+agents:
+
+  # ── Anthropic (direct API — not on TogetherAI) ────────────────────────────
+  claude_sonnet:
+    provider: anthropic
+    model: claude-sonnet-4-6
+    display_name: "Claude Sonnet 4.6"
+
+  claude_opus5:
+    provider: anthropic
+    model: claude-opus-5
+    display_name: "Claude Opus 5"
+
+  # ── OpenAI (direct API — not on TogetherAI) ───────────────────────────────
+  # gpt-5_2:
+  #   provider: openai
+  #   model: gpt-5.2
+  #   display_name: "gpt-5.2"
+
+  gpt-5_6:
+    provider: openai
+    model: gpt-5.6-sol
+    display_name: "gpt-5.6-sol"
+
+  gpt-5_5:
+    provider: openai
+    model: gpt-5.5
+    display_name: "gpt-5.5"
+
+  # gpt4o_mini:
+  #   provider: openai
+  #   model: gpt-4o-mini
+  #   display_name: "GPT-4o mini"
+
+  # o3_mini intentionally omitted.
+
+  # ── Open models via TogetherAI ────────────────────────────────────────────
+  deepseek:
+    provider: together
+    model: deepseek-ai/DeepSeek-V4-Pro
+    display_name: "DeepSeek-V4-Pro"
+
+  qwen:
+    provider: together
+    model: Qwen/Qwen2.5-7B-Instruct-Turbo
+    display_name: "Qwen2.5-7B-Instruct-Turbo"
+
+  llama:
+    provider: together
+    model: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    display_name: "Llama 3.3-70B"
+
+  gemma2:
+    provider: together
+    model: google/gemma-4-31B-it
+    display_name: "Gemma4-31B"
+
+  glm5_2:
+    provider: together
+    model: zai-org/GLM-5.2
+    display_name: "GLM-5.2"
+
+  muse_glimmer:
+    provider: together
+    model: meta-models/Muse-Glimmer-30B
+    display_name: "Muse-Glimmer-30B"
+
+  qwen3_8:
+    provider: together
+    model: Qwen/Qwen3.8-2.4T-A95B
+    display_name: "Qwen3.8-2.4T-A95B"
+
+  deepseek_0813:
+    provider: together
+    model: deepseek-ai/DeepSeek-V4-Pro-0813
+    display_name: "DeepSeek-V4-Pro-0813"
+
+  gpt_oss_120b:
+    provider: together
+    model: openai/gpt-oss-120b
+    display_name: "gpt-oss-120b"
+
+  # ── Local vLLM (self-hosted, not billed) ──────────────────────────────────
+  # Requires VLLM_BASE_URL (e.g. http://<host>:8001/v1) pointing at a running
+  # `vllm serve` instance. See VLLM_BASE_URL / VLLM_API_KEY in .env.example.
+  local_llama3_8b:
+    provider: vllm
+    model: Meta-Llama-3-8B-Instruct
+    display_name: "Llama-3-8B-Instruct (local vLLM)"

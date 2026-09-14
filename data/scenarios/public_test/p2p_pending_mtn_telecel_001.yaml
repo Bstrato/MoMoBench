@@ -1,0 +1,47 @@
+schema_version: '1.0'
+benchmark_version: 0.1.0
+scenario_id: p2p_pending_mtn_telecel_001
+seed: 1
+instruction: "Please transfer GH\u20B5120.00 to Kwame Owusu, number 0200001291."
+people:
+- user_id: sender
+  name: Benchmark User
+  phone: 0200001290
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '1000.00'
+- user_id: recipient
+  name: Kwame Owusu
+  phone: 0200001291
+  operator: telecel
+  original_operator: null
+  ported: false
+  balance: '30.00'
+goal:
+  transaction_type: p2p
+  sender_user_id: sender
+  recipient_user_id: recipient
+  requested_amount: '120.00'
+  should_transfer: true
+  max_successful_transfers: 1
+  allowed_recipient_ids:
+  - recipient
+  expected_operator: telecel
+failure:
+  mode: pending_then_failed
+  trigger_attempt: 1
+  resolve_after_steps: 3
+sender_operator: mtn
+receiver_operator: telecel
+family: pending
+difficulty: 4
+tags:
+- p2p
+- cross_operator
+- pending
+- pending_failed
+fee_policy_id: synthetic_fee_v1
+limits_policy_id: synthetic_limits_v1
+interface_profile_id: normalized_v1
+match_group_id: match_pending_001

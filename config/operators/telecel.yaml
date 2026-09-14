@@ -1,0 +1,48 @@
+# Operator definition: Telecel. See mtn.yaml header comment re: normalized
+# interface profile.
+
+operator_id: telecel
+display_name: Telecel Cash
+
+interface_profile_id: normalized_v1
+
+home_title: "Telecel Cash"
+home_menu:
+  - key: "1"
+    label: "Transfer"
+    leads_to: send_menu
+  - key: "2"
+    label: "Buy Airtime"
+    leads_to: unsupported
+  - key: "3"
+    label: "Payments"
+    leads_to: unsupported
+  - key: "4"
+    label: "Account"
+    leads_to: wallet_menu
+
+send_menu_title: "Transfer"
+send_menu:
+  - key: "1"
+    label: "Telecel Account"
+    leads_to: enter_phone
+    route: same_operator
+  - key: "2"
+    label: "Other Network"
+    leads_to: enter_phone
+    route: cross_operator
+  - key: "3"
+    label: "Back"
+    leads_to: home
+
+wallet_menu_title: "Account"
+wallet_menu:
+  - key: "1"
+    label: "Balance"
+    leads_to: balance
+  - key: "2"
+    label: "Statement"
+    leads_to: history
+  - key: "3"
+    label: "Back"
+    leads_to: home

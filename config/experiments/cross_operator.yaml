@@ -1,0 +1,41 @@
+# Focused cross-operator generalization study (spec §74, §125): the same
+# public_test suite, filtered down to cross-operator-route scenarios only,
+# so same-vs-cross comparisons and matched-group pairing are computed over
+# a homogeneous slice. Combine with the full final_core run's results for
+# the same-vs-cross generalization gap — this config exists to let that
+# slice be re-run/inspected on its own cheaply.
+
+name: cross_operator_v1
+
+scenario_dir: data/scenarios/public_test
+
+require_tags:
+  - cross_operator
+
+agents:
+  - claude_sonnet
+  - claude_opus5
+  - gpt-5_2
+  - gpt-5_6
+  - gpt4o_mini
+  - deepseek
+  - qwen
+  - llama
+  - gemma2
+  - glm5_2
+  - muse_glimmer
+  - qwen3_8
+  - deepseek_0813
+  - gpt_oss_120b
+
+interface: ussd
+
+repeats: 1
+
+max_steps: 20
+max_action_tokens: 128
+
+parallelism:
+  openai: 4
+  anthropic: 4
+  together: 6

@@ -1,0 +1,39 @@
+# Stage: frozen final core (spec §78 Stage C). 222 scenarios (the 9x8x3
+# generation grid plus the limit-violation/operator-mismatch extras) x 14
+# models x 3 repeats. Do not launch without a cost/throughput estimate from
+# the pilot run first (spec §78, §94). Scenarios must be frozen and hashed
+# (data/manifests/public_test.json) before this stage begins.
+#
+# claude_sonnet / claude_opus5 temporarily excluded from this roster for
+# cost reasons (~$150 projected for those two alone) — not removed from
+# config/agents.yaml, to be added back into this list and run once budget
+# allows. Do not treat their absence here as a scoring/benchmark decision.
+
+name: final_core_v1
+
+scenario_dir: data/scenarios/public_test
+
+agents:
+  - gpt-5_6
+  - gpt-5_5
+  - deepseek
+  - qwen
+  - llama
+  - gemma2
+  - glm5_2
+  - muse_glimmer
+  - qwen3_8
+  - deepseek_0813
+  - gpt_oss_120b
+
+interface: ussd
+
+repeats: 3
+
+max_steps: 20
+max_action_tokens: 128
+
+parallelism:
+  openai: 4
+  anthropic: 4
+  together: 6

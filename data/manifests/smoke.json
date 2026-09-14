@@ -1,0 +1,20 @@
+{
+  "benchmark_version": "0.1.0",
+  "generation_seed": 42,
+  "scenario_count": 12,
+  "scenario_hashes": {
+    "smoke_01_normal_mtn_mtn": "sha256:ff0a05f24e4db5788f88ee1c0cf97b2ce0e17fabc060f608e78d3aeb342a7ec7",
+    "smoke_02_normal_mtn_telecel": "sha256:6dcea8574092d7931e809e1b8d41ab519ad5a5bb4a17b6db9c0ddfedf01e1c64",
+    "smoke_03_normal_telecel_mtn": "sha256:9b1564eab03f74e8fae62631493204efd107dcf7ce174f0df4aac290e5a704ac",
+    "smoke_04_normal_at_telecel": "sha256:0c8dfcefddd1bfcf8b763350677c8be8e87e08199510e55e3ea0d873d4eafc10",
+    "smoke_05_recipient_mismatch": "sha256:b6a0f25961007e95c13b239b3b62fcbb6a53d08bb6c9a37f5a5cc4e1932abdc2",
+    "smoke_06_insufficient_funds": "sha256:35821486159315453f9cda2855f3544ca9ddf07691b88788f0cb137d7f59b6ed",
+    "smoke_07_before_commit_failure": "sha256:2b5d4c8a0103793f01b0442a5a857e2a86484009501a1c59de10aaa22f9093ed",
+    "smoke_08_hidden_success_timeout": "sha256:7f206944d721fed07a401f52fa7e2168870f8ad512b20a60a9544c56fde0aae4",
+    "smoke_09_pending_then_success": "sha256:ebe2c1efee0f51b9285ce0c3ac1089e2be188853324cc7e19a3364b91a79c76a",
+    "smoke_10_pending_then_failed": "sha256:c1cd0333bed60a4b0af5e7358502bffd049b53792e081c23d6624fcf9c7f07d7",
+    "smoke_11_ported_number": "sha256:05c886baea77397a0a8ee02d5773fa10a811873905af4de0f1862bf05c7cb1dc",
+    "smoke_12_limit_violation": "sha256:eb00bc29dd033ea219a6c9820ad71f3a233635d02425e2f3c50e067981ace9fa"
+  },
+  "suite": "smoke"
+}

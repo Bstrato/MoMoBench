@@ -1,0 +1,51 @@
+# Operator definition: MTN. Menu labels are the "normalized_v1" interface
+# profile (spec §33.1) — a scientifically controlled profile where providers
+# differ in wording/menu order but expose equivalent capabilities. This is
+# not a claim of pixel/text-exact replication of a live USSD menu; see
+# docs/OPERATOR_PROVENANCE.md.
+
+operator_id: mtn
+display_name: MTN MoMo
+
+interface_profile_id: normalized_v1
+
+home_title: "MTN MoMo"
+home_menu:
+  - key: "1"
+    label: "Send Money"
+    leads_to: send_menu
+  - key: "2"
+    label: "Airtime"
+    leads_to: unsupported
+  - key: "3"
+    label: "Payments"
+    leads_to: unsupported
+  - key: "4"
+    label: "Wallet"
+    leads_to: wallet_menu
+
+send_menu_title: "Send Money"
+send_menu:
+  - key: "1"
+    label: "MTN Wallet"
+    leads_to: enter_phone
+    route: same_operator
+  - key: "2"
+    label: "Other Networks"
+    leads_to: enter_phone
+    route: cross_operator
+  - key: "3"
+    label: "Back"
+    leads_to: home
+
+wallet_menu_title: "Wallet"
+wallet_menu:
+  - key: "1"
+    label: "Check Balance"
+    leads_to: balance
+  - key: "2"
+    label: "Transaction History"
+    leads_to: history
+  - key: "3"
+    label: "Back"
+    leads_to: home

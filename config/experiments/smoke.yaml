@@ -1,0 +1,22 @@
+# Stage: smoke (spec §78). Cheapest possible check that the whole pipeline
+# works: 12 hand-reviewed scenarios against the mock-agent controls only —
+# no API keys required, zero cost.
+
+name: smoke_v1
+
+scenario_dir: data/scenarios/smoke
+
+agents:
+  - oracle
+  - naive
+  - random
+
+interface: ussd
+
+repeats: 1
+
+max_steps: 20
+max_action_tokens: 128
+
+parallelism:
+  mock: 8

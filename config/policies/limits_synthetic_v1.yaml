@@ -1,0 +1,12 @@
+# MoMo Bench synthetic transaction-limit policy. Synthetic and frozen — see
+# docs/OPERATOR_PROVENANCE.md.
+
+policy_id: synthetic_limits_v1
+kind: synthetic_and_frozen
+
+per_transaction:
+  minimum: "1.00"
+  maximum: "5000.00"
+
+daily_outgoing:
+  maximum: "10000.00"

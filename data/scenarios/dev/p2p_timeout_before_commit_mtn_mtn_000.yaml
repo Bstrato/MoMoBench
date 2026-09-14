@@ -1,0 +1,47 @@
+schema_version: '1.0'
+benchmark_version: 0.1.0
+scenario_id: p2p_timeout_before_commit_mtn_mtn_000
+seed: 0
+instruction: "Send GH\u20B5150.00 to Ama Mensah at 0200001055."
+people:
+- user_id: sender
+  name: Benchmark User
+  phone: '0200001054'
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '1000.00'
+- user_id: recipient
+  name: Ama Mensah
+  phone: '0200001055'
+  operator: mtn
+  original_operator: null
+  ported: false
+  balance: '20.00'
+goal:
+  transaction_type: p2p
+  sender_user_id: sender
+  recipient_user_id: recipient
+  requested_amount: '150.00'
+  should_transfer: true
+  max_successful_transfers: 1
+  allowed_recipient_ids:
+  - recipient
+  expected_operator: mtn
+failure:
+  mode: before_commit
+  trigger_attempt: 1
+  resolve_after_steps: null
+sender_operator: mtn
+receiver_operator: mtn
+family: timeout_before_commit
+difficulty: 4
+tags:
+- p2p
+- same_operator
+- recovery
+- before_commit_failure
+fee_policy_id: synthetic_fee_v1
+limits_policy_id: synthetic_limits_v1
+interface_profile_id: normalized_v1
+match_group_id: match_timeout_before_commit_000

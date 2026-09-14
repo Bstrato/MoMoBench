@@ -1,0 +1,19 @@
+# MoMo Bench synthetic fee policy.
+#
+# This is a BENCHMARK policy, not a claim that these are the exact live fees
+# charged by any real Ghanaian Mobile Money operator. It is synthetic and
+# frozen for reproducibility (see docs/OPERATOR_PROVENANCE.md). Never fetch
+# live fees at runtime.
+
+policy_id: synthetic_fee_v1
+kind: synthetic_and_frozen
+
+same_operator:
+  rate: "0.005"
+  minimum: "0.00"
+  maximum: "10.00"
+
+cross_operator:
+  rate: "0.010"
+  minimum: "0.00"
+  maximum: "10.00"

@@ -1,0 +1,25 @@
+benchmark:
+  name: MoMo Bench
+  version: "0.1.0"
+
+interface:
+  mode: ussd
+  profile: normalized_v1
+
+episode:
+  max_steps: 20
+  max_action_tokens: 128
+
+policies:
+  fee: synthetic_fee_v1
+  limits: synthetic_limits_v1
+
+evaluation:
+  money_currency: GHS
+  repeats_final: 3
+
+logging:
+  save_transcript: true
+  save_raw_model_output: true
+  save_observations: true
+  save_world_snapshots: false

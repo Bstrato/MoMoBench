@@ -1,0 +1,48 @@
+# Operator definition: AT (AirtelTigo/AT Money). See mtn.yaml header comment
+# re: normalized interface profile.
+
+operator_id: at
+display_name: AT Money
+
+interface_profile_id: normalized_v1
+
+home_title: "AT Money"
+home_menu:
+  - key: "1"
+    label: "Send Money"
+    leads_to: send_menu
+  - key: "2"
+    label: "Airtime"
+    leads_to: unsupported
+  - key: "3"
+    label: "Services"
+    leads_to: unsupported
+  - key: "4"
+    label: "Wallet"
+    leads_to: wallet_menu
+
+send_menu_title: "Send Money"
+send_menu:
+  - key: "1"
+    label: "AT Wallet"
+    leads_to: enter_phone
+    route: same_operator
+  - key: "2"
+    label: "Other Networks"
+    leads_to: enter_phone
+    route: cross_operator
+  - key: "3"
+    label: "Back"
+    leads_to: home
+
+wallet_menu_title: "Wallet"
+wallet_menu:
+  - key: "1"
+    label: "Check Balance"
+    leads_to: balance
+  - key: "2"
+    label: "Transaction History"
+    leads_to: history
+  - key: "3"
+    label: "Back"
+    leads_to: home
